@@ -1,0 +1,2309 @@
+/*!
+Theme Name: showcase
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: showcase
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+showcase is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+	- Normalize
+	- Box sizing
+# Base
+	- Typography
+	- Elements
+	- Links
+	- Forms
+## Layouts
+# Components
+	- Navigation
+	- Posts and pages
+	- Comments
+	- Widgets
+	- Media
+	- Captions
+	- Galleries
+# plugins
+	- Jetpack infinite scroll
+# Utilities
+	- Accessibility
+	- Alignments
+
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Normalize
+--------------------------------------------- */
+
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+	 ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+
+
+ /*=======VÅR KOD==========*/
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400&display=swap');
+
+ /*Egen font som finns i mapp i servern, den används på rad 415 ish*/
+ @font-face {
+	font-family: 'Cako';
+	src: url('https://toto.mkv.kau.se/vt23/wd2g23_04/wp-content/themes/showcase/fonts/Cako/Cako_Regular.otf') format('opentype');
+  }
+
+ :root {
+	 --primary-color: #800080;
+	 --primary-color-hover: #A600A6;
+	 --secondary-color: pink;
+ }
+
+
+
+ /*===================================*/
+
+ html {
+	line-height: 1.15;
+	-webkit-text-size-adjust: 100%;
+}
+
+/* Sections
+	 ========================================================================== */
+
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+	margin: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+	display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+/* Grouping content
+	 ========================================================================== */
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+	box-sizing: content-box;
+	height: 0;
+	overflow: visible;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+/* Text-level semantics
+	 ========================================================================== */
+
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+	background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+	border-bottom: none;
+	text-decoration: underline;
+	text-decoration: underline dotted;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+	font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+	font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+sup {
+	top: -0.5em;
+}
+
+/* Embedded content
+	 ========================================================================== */
+
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+	border-style: none;
+}
+
+/* Forms
+	 ========================================================================== */
+
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+	font-family: inherit;
+	font-size: 100%;
+	line-height: 1.15;
+	margin: 0;
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+	overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+	text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+	-webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+	outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the padding in Firefox.
+ */
+fieldset {
+	padding: 0.35em 0.75em 0.625em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *		`fieldset` elements in all browsers.
+ */
+legend {
+	box-sizing: border-box;
+	color: inherit;
+	display: table;
+	max-width: 100%;
+	padding: 0;
+	white-space: normal;
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+	vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+	overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type="checkbox"],
+[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+	-webkit-appearance: textfield;
+	outline-offset: -2px;
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+	-webkit-appearance: button;
+	font: inherit;
+}
+
+/* Interactive
+	 ========================================================================== */
+
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+	display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+	display: list-item;
+}
+
+/* Misc
+	 ========================================================================== */
+
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+	display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+	display: none;
+}
+
+/* Box sizing
+--------------------------------------------- */
+
+/* Inherit box-sizing to more easily change it's value on a component level.
+@link http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+
+/* Typography
+--------------------------------------------- */
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: #404040;
+	font-family: 'Poppins', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", courier, monospace;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+/* Elements
+--------------------------------------------- */
+body {
+	background: #fff;
+}
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+ul,
+ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: 700;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+figure {
+	margin: 1em 0;
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+/* Links
+--------------------------------------------- */
+a {
+	color: #4169e1;
+}
+
+a:visited {
+	color: #800080;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: #191970;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+/* Forms
+--------------------------------------------- */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb;
+	border-radius: 3px;
+	background: #e6e6e6;
+	color: rgba(0, 0, 0, 0.8);
+	line-height: 1;
+	padding: 0.6em 1em 0.4em;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	border-color: #ccc #bbb #aaa;
+}
+
+button:active,
+button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+	border-color: #aaa #bbb #bbb;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 3px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	color: #111;
+}
+
+select {
+	border: 1px solid #ccc;
+}
+
+textarea {
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+
+/* Navigation
+--------------------------------------------- */
+.main-navigation {
+	display: block;
+	width: 100%;
+}
+
+.main-navigation ul {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+.main-navigation ul ul {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	float: left;
+	position: absolute;
+	top: 100%;
+	left: -999em;
+	z-index: 99999;
+}
+
+.main-navigation ul ul ul {
+	left: -999em;
+	top: 0;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	display: block;
+	left: auto;
+}
+
+.main-navigation ul ul a {
+	width: 200px;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	left: auto;
+}
+
+.main-navigation li {
+	position: relative;
+}
+
+.main-navigation a {
+	display: block;
+	text-decoration: none;
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+
+	.menu-toggle.hamburger {
+		display: none;
+	}
+
+	.main-navigation ul {
+		display: flex;
+	}
+}
+
+.site-main .comment-navigation,
+.site-main
+.posts-navigation,
+.site-main
+.post-navigation {
+	margin: 0 0 1.5em;
+}
+
+.comment-navigation .nav-links,
+.posts-navigation .nav-links,
+.post-navigation .nav-links {
+	display: flex;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	flex: 1 0 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	text-align: end;
+	flex: 1 0 50%;
+}
+
+
+/*=====inlagt själv=====*/
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+ .hamburger {
+	padding: 15px 15px;
+	display: inline-block;
+	cursor: pointer;
+	transition-property: opacity, filter;
+	transition-duration: 0.15s;
+	transition-timing-function: linear;
+	font: inherit;
+	color: inherit;
+	text-transform: none;
+	background-color: transparent;
+	border: 0;
+	margin: 0;
+	overflow: visible; }
+	.hamburger:hover {
+	  opacity: 0.7; }
+	.hamburger.is-active:hover {
+	  opacity: 0.7; }
+	.hamburger.is-active .hamburger-inner,
+	.hamburger.is-active .hamburger-inner::before,
+	.hamburger.is-active .hamburger-inner::after {
+	  background-color: #000; }
+
+  .hamburger-box {
+	width: 40px;
+	height: 24px;
+	display: inline-block;
+	position: relative; }
+
+  .hamburger-inner {
+	display: block;
+	top: 50%;
+	margin-top: -2px; }
+	.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+	  width: 40px;
+	  height: 4px;
+	  background-color: #000;
+	  border-radius: 4px;
+	  position: absolute;
+	  transition-property: transform;
+	  transition-duration: 0.15s;
+	  transition-timing-function: ease; }
+	.hamburger-inner::before, .hamburger-inner::after {
+	  content: "";
+	  display: block; }
+	.hamburger-inner::before {
+	  top: -10px; }
+	.hamburger-inner::after {
+	  bottom: -10px; }
+
+	  /*
+   * Spring transformation when closing hamburger menu
+   */
+.hamburger--spring .hamburger-inner {
+	top: 2px;
+	transition: background-color 0s 0.13s linear; }
+	.hamburger--spring .hamburger-inner::before {
+	  top: 10px;
+	  transition: top 0.1s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+	.hamburger--spring .hamburger-inner::after {
+	  top: 20px;
+	  transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+  .toggled .hamburger--spring .hamburger-inner {
+	transition-delay: 0.22s;
+	background-color: transparent !important; }
+	.toggled .hamburger--spring .hamburger-inner::before {
+	  top: 0;
+	  transition: top 0.1s 0.15s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+	  transform: translate3d(0, 10px, 0) rotate(45deg); }
+	.toggled .hamburger--spring .hamburger-inner::after {
+	  top: 0;
+	  transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.22s cubic-bezier(0.215, 0.61, 0.355, 1);
+	  transform: translate3d(0, 10px, 0) rotate(-45deg); }
+
+
+
+
+/* ======================== */
+
+
+/* Posts and pages
+--------------------------------------------- */
+.sticky {
+	display: block;
+}
+
+.post,
+.page {
+	margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/* Comments
+--------------------------------------------- */
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/* Widgets
+--------------------------------------------- */
+.widget {
+	margin: 0 0 1.5em;
+}
+
+.widget select {
+	max-width: 100%;
+}
+
+/* Media
+--------------------------------------------- */
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure logo link wraps around logo image. */
+.custom-logo-link {
+	display: inline-block;
+}
+
+/* Captions
+--------------------------------------------- */
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+/* Galleries
+--------------------------------------------- */
+.gallery {
+	margin-bottom: 1.5em;
+	display: grid;
+	grid-gap: 1.5em;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+}
+
+.gallery-columns-2 {
+	grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery-columns-3 {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery-columns-4 {
+	grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery-columns-5 {
+	grid-template-columns: repeat(5, 1fr);
+}
+
+.gallery-columns-6 {
+	grid-template-columns: repeat(6, 1fr);
+}
+
+.gallery-columns-7 {
+	grid-template-columns: repeat(7, 1fr);
+}
+
+.gallery-columns-8 {
+	grid-template-columns: repeat(8, 1fr);
+}
+
+.gallery-columns-9 {
+	grid-template-columns: repeat(9, 1fr);
+}
+
+.gallery-caption {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Plugins
+--------------------------------------------------------------*/
+
+/* Jetpack infinite scroll
+--------------------------------------------- */
+
+/* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+	display: none;
+}
+
+/* Re-display the Theme Footer when Infinite Scroll has reached its end. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+
+/* Accessibility
+--------------------------------------------- */
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	clip-path: none;
+	color: #21759b;
+	display: block;
+	font-size: 0.875rem;
+	font-weight: 700;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}
+
+/* Do not show the outline on the skip link target. */
+#primary[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/* Alignments
+--------------------------------------------- */
+.alignleft {
+
+	/*rtl:ignore*/
+	float: left;
+
+	/*rtl:ignore*/
+	margin-right: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.alignright {
+
+	/*rtl:ignore*/
+	float: right;
+
+	/*rtl:ignore*/
+	margin-left: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1.5em;
+}
+
+
+
+/*=============================================
+**======VÅR KOD BÖRJAR=========================
+=============================================*/
+
+/*====== Font för allt ligger på rad 415 och implementering  ======*/
+
+/*så footer kan hålla skärmbredd*/
+body {
+	overflow-x: hidden;
+	max-width: 1200px;
+	margin: auto;
+}
+
+h1 {
+	font-family: 'Cako', 'Poppins', sans-serif;
+}
+
+/*Alla rubriker*/
+.home-gallery-title, 
+.entry-title {
+	margin: 0.5em 0;
+}
+
+/*-----maxbredd på sida-----*/
+.entry-content,
+.page,
+.nav-links {
+	/* padding-left: 1em; */
+	max-width: 1200px;
+	margin: auto;
+}
+.site-search {
+	max-width: 1200px;
+	margin: 70px auto 0 auto !important;
+	/* padding: 0 3em !important; */
+
+}
+
+/*att en sida alltid är längd som skärm, för footer längst ner*/
+.site-main {
+	padding: 0 1em;
+	min-height: 100vh;
+	/* display: flex;
+	flex-direction: column; */
+	/* margin: 2em 3em 0 3em; */
+}
+
+/*Så hero går ut i kanterna oavsett max-width*/
+.alignfull{
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+}
+
+/*länk design*/
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+a:visited{
+	color: black;
+}
+
+a:hover{
+	color: var(--primary-color);
+}
+
+/*primärfärg på a-taggar på kurser och i enskilda projekt*/
+.project-container a,
+.course-list-item a {
+	color: var(--primary-color);
+}
+
+/*annan hoverfärg på a-taggar på kurser och i enskilda projekt*/
+.project-container a:hover,
+.course-list-item a:hover {
+	color: var(--primary-color-hover);
+
+}
+
+/*avskiljare mellan projekt och lsta på alla projekt inom den kursen*/
+hr.divider {
+	margin: 0;
+	height: 5px;
+	background-color: var(--primary-color);
+	background: linear-gradient(90deg, rgba(134,58,180,0.5) 0%, rgba(253,29,173,0.5) 56%, rgba(252,110,69,0.5) 96%);
+	border-radius: 50px;
+}
+
+
+/*osynliggör edit-knappen som är default i wp*/
+.edit-link {
+	display: none;
+}
+
+/*next och previous länkar redigering för projekt / community*/
+.nav-next,
+.nav-previous, 
+.prev, 
+.next,
+.page-numbers {
+	margin-top: 3em;
+}
+
+.nav-next>a,
+.nav-previous>a {
+	color: var(--primary-color);
+	font-weight: 600;
+	margin-top: 3em;
+}
+
+/*next och prevoius länkar redigering för kurser & community*/
+.pods-pagination-simple, 
+.pods-pagination-paginate{
+	display: flex;
+	justify-content: center;
+}
+
+.pods-pagination-number,
+.pods-pagination-paginate,
+.pods-pagination-number:visited {
+	margin: 0 1em;
+	color: var(--primary-color);
+	font-weight: 600;
+}
+
+.pods-pagination-paginate a{
+	color: var(--primary-color);
+}
+
+.page-numbers{
+	margin-left: 0.2rem;
+	margin-right: 0.2rem;
+}
+
+.page-numbers:hover,
+.prev:hover, 
+.next:hover{
+	color: var(--primary-color-hover);
+}
+
+.prev, 
+.next{
+	margin-right: 1rem;
+	margin-left: 1rem;
+}
+
+
+/*******************
+---------NAV---------
+*********************/
+.site-header{
+	display: flex;
+	justify-content: space-between;
+	/* position: relative !important;
+	z-index: 1 !important; */
+	height: 70px !important;
+	padding: 1.5rem;
+	position: sticky;
+    top: 0;
+	right: 0;
+    z-index: 100;
+	width: 100%;
+	transition: 0.3s ease-in-out;
+}
+
+.navbar-shadow {
+	background-color: #fff;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+/*logo storlek*/
+.custom-logo{
+	max-width: 50px !important;
+}
+
+.custom-logo-big {
+	width: 100px !important;
+}
+
+.custom-logo-link {
+	position: absolute;
+	top: 10px;
+	z-index: 10;
+}
+
+/*för att justify ska fungera*/
+.main-navigation{
+	width: auto;
+	margin: auto;
+	margin-right: 0;
+	font-weight: 600;
+	color: var(--primary-color);
+}
+
+.menu-item{
+	margin-left: 20px;
+}
+
+/*färg på meny-item*/
+.nav-menu li>a {
+	color: var(--primary-color);
+}
+
+.nav-menu>li>a:visited {
+	color: var(--primary-color);
+}
+.nav-menu>li>a:hover {
+	color: var(--primary-color-hover);
+}
+/*om man inte är högst upp på startsida*/
+.text-color{
+	color: var(--primary-color) !important;
+}
+
+/*om man är högst upp på startsidan*/
+.text-white {
+	color: white !important;
+}
+
+.text-white:hover {
+	color: #ffdaff !important;
+}
+
+/*HAMBURGEMENY */
+/*vit bakgrund och positionering när menu items visas*/
+.toggled .menu-nav-container {
+	background-color: white;
+	position: absolute;
+	top: 70px;
+	top: 0;
+	right: 0;
+	width: 100%;
+	padding-bottom: 2em;
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+	transition: all 300ms ease-in-out;
+}
+
+.hamburger {
+	padding-top: 0;
+}
+
+.hamburger-box {
+	z-index: 1000;
+}
+
+.hamburger .nav-menu li>a {
+	color: var(--primary-color) !important;
+}
+
+.toggled .nav-menu:first-child{
+	margin-top: 70px;
+}
+
+
+/*gör hambugaren i primärfärg*/
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+	background-color: var(--primary-color);
+}
+
+.burger-shadow {
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+/*design på menuartiklar vid mobilskärm*/
+.toggled ul .menu-item {
+	padding: 0.7em 1em;
+	margin: 0;
+	text-align: center;
+	font-size: 1.25em;
+}
+
+/*annan design på menyitem för den sidan man är på*/
+.menu li.current-menu-item a {
+	text-decoration: overline;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 7px;
+  }
+
+  /*************************
+  ---------FOOTER-----------
+  *************************/
+  
+  /* sticky footer */
+  /*customize footer innehåll*/
+  .site-footer {
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  margin: 0;
+	  margin-top: 5em;
+	  min-height: 50px;
+	  background: linear-gradient(90deg, rgba(134,58,180,1) 0%, rgba(253,29,173,1) 56%, rgba(252,110,69,0.9446902654867256) 96%);
+	  color: #fff;
+	  text-align: center;
+	  
+	  /*För att footer sak gå ut hela skärmbredden*/
+	  width: 100vw;
+	  margin-left: calc(50% - 50vw); /* Center the footer horizontally */
+	  padding-left: calc(50vw - 50%); /* Compensate for negative margin */
+	  margin-right: calc(50% - 50vw); /* Center the footer horizontally */
+	  padding-right: calc(50vw - 50%);
+  }
+  
+  .site-footer .widget,
+  .site-footer p {
+	  margin-bottom: 1em;
+  }
+  
+  /*copyright i footer*/
+  .footer-copyright {
+	  font-size: x-small;
+	  font-style: italic;
+	  margin: 0;
+	  margin-bottom: 1em;
+  }
+  .copyright-icon {
+	  font-style: normal;
+  }
+
+/****************************
+-------------HERO--------------
+******************************/
+.wp-block-cover {
+	height: 100vh;
+	min-height: 600px;
+	margin-top: -70px;
+}
+/*Försök att få hero-image 100% bred men funkar ej*/
+.wp-block-cover img {
+	width: 100% !important;
+	height: auto;
+}
+
+.hero-title {
+	margin-bottom: 50px !important;
+	font-family: 'Cako', 'Poppins', sans-serif;
+	font-size: 12vw !important;
+	margin-top: 50px !important;
+	margin-bottom: 0 !important;
+	text-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.hero-tagline {
+	font-family: 'Cako', 'Poppins', sans-serif;
+	font-size: 1.5em;
+	margin: 0 1em;
+	margin-top: 1em !important;
+	margin-bottom: 2em !important;
+	text-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.hero-inspire .wp-block-group__inner-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.hero-search .wp-block-search__inside-wrapper {
+	max-width: 600px;
+	border: none;
+}
+
+.hero-search .wp-block-search__input {
+	background-color: #f1f1f1;
+	border: none;
+	padding-left: 0.5em;
+	font-size: small;
+}
+
+.hero-search {
+	margin-bottom: 5em;
+	margin-top: 3em;
+}
+
+.arrow-down img {
+	width: 30px !important;
+	width: 60px !important;
+	opacity: 0;
+}
+
+.activated figure img  {
+	opacity: 1;
+	transform: scale(0.5);
+	transition: all 1000ms ease-in;
+	transition-delay: 2s;
+}
+
+	/*projekt i hero*/
+	.hero-projects .project-list {
+		display: none;
+	}
+	
+	.hero-projects .project-list a {
+		background-color: white;
+		border-radius: 5px;
+	}
+	
+	.hero-projects .project-list .project-list-item {
+		opacity: 0;
+	}
+
+/*********************************
+-------startsida under hero-------
+**********************************/
+/*maxbredd på info om showcase*/
+.home-gallery-title,
+.wp-block-heading {
+	margin-top: 3em;
+}
+
+.about-text {
+	max-width: 580px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.view-all-courses-link {
+	margin-top: 2em;
+}
+
+
+/*************************************
+-----------tillbakaknapp-------------
+****************************************/
+.alg_back_button_simple {
+	font-size: 2em;
+	color: var(--primary-color);
+}
+
+/*ALLMÄNT FÖR SÖKKNAPP*/
+/*redigera search-knapp*/
+.wp-block-search__button {
+	background-color: var(--primary-color);
+	background-color: #f1f1f1;
+	border: none;
+	border-radius: 0 3px 3px 0;
+	margin-left: 0;
+}
+.wp-block-search__button:hover {
+	background-color: #ebebeb;
+}
+
+/*gör sökikon vit*/
+.wp-block-search__button svg {
+	color: white;
+	color: var(--primary-color);
+	border: none;
+}
+
+.wp-block-search__button:hover svg {
+	color: var(--primary-color-hover);
+}
+/*-----*/
+
+/*******************************
+-----------user profile------------
+*ny kod för profile 17maj-av sara
+*********************************/
+.avatar{
+	border-radius: 50%;
+	width: 10em;
+	box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+.user-bg{
+	background: rgb(134,58,180);
+	background: linear-gradient(90deg, rgba(134,58,180,1) 0%, rgba(253,29,173,1) 56%, rgba(252,110,69,0.9446902654867256) 96%);
+	padding: 2rem;
+	border-radius: 5px;
+}
+
+.user-section .user-info{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.user-section .user-name{
+	color: white;
+	font-size: 24px;
+}
+
+.user-section .user-about {
+	max-width: 500px;
+	margin: 1em auto;
+	color: white;
+	text-align: center;
+}
+
+/*container för ikoner*/
+.social-icons {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+/*redigeraar ikoner*/
+.social-icons .fa-brands {
+	color: white;
+	font-size: 2em;
+	margin: 0.5em 20px;
+	transition: 0.3s ease-in-out;
+}
+
+.social-icons .fa-brands:hover {
+	transform: scale(1.3);
+}
+
+.project-section{
+	padding: 3rem 0;
+	padding: 0;
+}
+
+.member-date{
+	margin-bottom: 0;
+	display: flex;
+	color: white;
+	text-align: center;
+	font-size: 14px;
+}
+
+/**************************
+-------only my profile------
+***************************/
+.edit-button {
+	margin-top: 0;
+	text-align: end;
+}
+
+.edit-button a {
+	color: white;
+	transition: 0.3s ease-in-out;
+	font-size: 1.5em;
+}
+
+.edit-button a:hover {
+	color: var(--primary-color);
+}
+
+.profile-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	margin-top: 2em;
+}
+
+.profile-buttons a {
+	padding: 1em 5em;
+	margin-bottom: 1em !important;
+}
+
+
+/****************************************'
+------------- projects in profile ---------
+*****************************************/
+.pod-title {
+	font-family: 'Cako', 'Poppins', sans-serif;
+	margin-top: 2em;
+}
+
+.user-section .projects {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	grid-gap: 50px;
+	grid-auto-flow: dense;
+	padding: 0;
+}
+
+.user-section .project {
+	margin: 0 auto;
+	width: auto;
+	max-width: 300px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+	padding: 1rem;
+}
+
+/**************************
+------ create post --------
+*************************** */
+form{
+	display: flex;
+	justify-content: center;
+}
+
+.pods-form-ui-row-name-post-excerpt,
+.pods-form-ui-row-name-comment-status,
+.pods-form-ui-row-name-post-name,
+.pods-form-ui-row-name-post-status,
+.pods-form-ui-row-name-post-password,
+.pods-form-ui-row-name-menu-order{
+	display: none;
+}
+
+
+
+/*************************************************
+--------Allmän design för listning av projekt-----
+**************************************************/
+
+/*layout till listning av projekt*/
+.project-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	grid-gap: 40px;
+	grid-auto-flow: dense;
+	padding: 0;
+}
+
+/*gör varje projekt till ett "kort"*/
+.project-list-item {
+	margin: 0 auto;
+	width: auto;
+	max-width: 300px;
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+	transition: transform .5s ease;
+	position: relative;
+}
+
+.project-list-item:hover {
+    transform: scale(1.05);
+}
+
+.project-list-item a{
+	display: block;
+	width: inherit;
+	height: 100%;
+	box-sizing: border-box;
+	/* width: calc(100% + 1em);
+	height: calc(100% + 1em); */
+}
+
+.thumbnail {
+	padding: 1em;
+	padding-bottom: 0;
+}
+
+
+/*storlek på projekt bild*/
+.thumbnail .size-thumbnail{
+	width: 300px;
+}
+
+/*titel till projekt*/
+.projectdata h2,
+.project-list-item h3 {
+	font-weight: 500;
+	font-size: 1em;
+	text-align: center;
+	padding: 1em;
+	margin: 0;
+}
+
+
+/******************************
+--------Galleri design----------
+*****************************/
+ul.project-list {
+	margin: 0;
+}
+
+
+/***************************************
+------------- project single ------------
+**************************************/
+
+.project-content{
+	/* padding: 2rem; */
+	margin: auto;
+	margin-top: 0.5em;
+}
+
+.project-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+  grid-auto-flow: dense;
+}
+
+.image {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%; 
+  
+}
+
+.image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+  transition: ease-in-out 0.2s;
+}
+
+.image img:hover {
+	box-shadow: rgba(0, 0, 0, 0.271) 0px 1px 1px, rgba(0, 0, 0, 0.239) 0px 2px 2px, rgba(0, 0, 0, 0.32) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.221) 0px 16px 16px;
+	transition: ease-in-out 0.2s;
+	opacity: 0.15;
+}
+
+.image-view{
+	position: relative;
+	margin: 0;
+	color: var(--primary-color);
+	font-size: 32px;
+	margin-top: 45%;
+	text-align: center;
+	transition: ease-in-out 0.3s;
+}
+
+.project-by{
+	margin-bottom: 0.5rem;
+}
+
+.contributors{
+	list-style: none;
+	padding-left: 0;
+	margin: auto;
+}
+
+.project-in-course{
+	margin-top: 2em;
+	margin-bottom: 0.5rem;
+}
+.project-in-course+p{
+	margin: 0;
+}
+
+.post-thumbnail,
+.hide,
+.project .entry-title,
+.project .entry-content>p {
+	display: none;
+}
+
+.wp-duotone-000000-rgb6288225-4.wp-block-cover > .wp-block-cover__image-background, .wp-duotone-000000-rgb6288225-4.wp-block-cover > .wp-block-cover__video-background {
+    filter:none ;
+}
+
+.projects>ul {
+	list-style-type: none;
+	margin: 0 0 2em 0;
+	padding: 0;
+}
+.projects>ul>li {
+	padding: 0.25em 0;
+}
+
+.post-date {
+	margin-top: 2em;
+	font-size: 0.75em;
+}
+
+/*BILD HANTERING NÄR MAN KLICKAR PÅ EN BILD I ETT PROJEKT*/
+/* Full-screen image overlay */
+.fullscreen-image {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.fullscreen-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); 
+  display: none;
+  z-index: 9999;
+}
+
+.fullscreen-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.open-fullscreen {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+
+/*********************************
+----------- courses --------------
+**********************************/
+
+/*tar bort beskrivningen som hamnar ovanför kurs-resultat vid sök*/
+.entry-summary p{
+	display: none;
+}
+/*lägger till beskrivningen i kortet igen i resultatet*/
+.course-list-item p{
+	display: block !important;
+}
+
+.course-search-bar{
+	margin-bottom: 2rem;
+	max-width: 100%;
+}
+
+.course-search-bar button{
+	color: white;
+	border: none;
+}
+
+.course-search-bar input {
+	border-radius: 3px 0 0 3px;
+}
+
+.course-search-bar input::placeholder{
+	padding-left: 0.5rem;
+	font-size: small;
+}
+
+.course-search-bar label{
+	display: none;
+}
+
+ .wp-block-search__input {
+	background-color: #f1f1f1;
+	border: none !important;
+	padding-left: 0.5em !important;
+}
+
+
+/*listning av kurser*/
+.course-list{
+	list-style: none;
+	padding: 0;
+	margin: auto;
+	color: #000;
+}
+
+.course-list-item{
+	padding: 2rem;
+	margin-bottom: 4rem;
+	background-color: rgb(210, 217, 244);
+	box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+	transition: ease-in-out 0.3s;
+	border-radius: 10px;
+	background: linear-gradient(90deg, rgba(134,58,180,0.5) 0%, rgba(253,29,173,0.5) 56%, rgba(252,110,69,0.5) 96%);
+}
+
+.course-list-item:nth-child(even) {
+    background-color: rgb(241, 224, 245);
+	background: linear-gradient(90deg, rgba(252,110,69,0.5) 0%, rgba(253,29,173,0.5) 56%, rgba(134,58,180,0.5) 96%);
+}
+
+.course-list-item:hover{
+	box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px !important;
+	transition: 0.3s ease-in-out;
+}
+
+.flex-box{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.course-title {
+	margin-right: 30px;
+	margin-bottom: 0;
+}
+
+.text-d-none:hover{
+	/* color: rgb(105, 18, 212); */
+	color: var(--primary-color);
+	text-decoration: none;
+	transition: 0.3s ease-in-out;
+}
+
+/*******************************
+-----------single course-------
+*********************************/
+.course-project-heading{
+	padding: 0;
+	margin-top: 2em;
+	font-family: 'Cako', 'Poppins', sans-serif;
+	/* background-color: rgb(244, 227, 230);*/
+}
+
+.course-info{
+	padding: 0;
+	margin-top: 2em;
+}
+
+.cours .entry-title,
+.cours .entry-content>p {
+	display: none;
+}
+
+.course-projects{
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	grid-gap: 50px;
+	grid-auto-flow: dense;
+	padding: 0;
+	margin-top: 2rem;
+}
+
+.course-link {
+	text-decoration: underline;
+}
+
+.course-projects img{
+	width: 100%;
+    height: auto;
+	max-width: 500px;
+	box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+
+/*sökruta efter man har sökt en gång*/
+.search-form .search-field {
+	background-color: #f1f1f1;
+	border: none !important;
+	padding-left: 1em !important;
+}
+
+.search-form .search-submit {
+	background-color: var(--primary-color);
+	color: white;
+	margin-left: 0.5em;
+	border: none;
+}
+
+/*create button för att skapa projekt och kurs*/
+.create-button>a {
+	background-color: var(--primary-color);
+	color: white;
+	font-size: smaller;
+	margin-bottom: 2em;
+}
+
+.create-button>a:hover {
+	background-color: var(--primary-color-hover);
+}
+
+.add-new-buttons a{
+	background-color: var(--primary-color);
+	color: white;
+	font-size: smaller;
+	margin-bottom: 2em;
+}
+
+.add-new-buttons a:hover {
+	background-color: var(--primary-color-hover);
+}
+
+
+.button-search-group>div {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+
+
+/*****************************
+***** CREATE ACCOUNT FORM*****/
+/*****************************/
+.user-registration{
+	background: linear-gradient(90deg, rgba(252,110,69,0.5) 0%, rgba(253,29,173,0.5) 56%, rgba(134,58,180,0.5) 96%);
+	max-width: 30rem;
+	border-radius: 10px;
+	margin: auto;
+}
+
+.register{
+	display: flex;
+	flex-direction: column;
+}
+
+.ur-button-container{
+	margin: auto !important;
+	margin-top: 2rem !important;
+}
+
+.ur-button-container .btn{
+	background-color: var(--primary-color);
+	color: white;
+	border-radius: 10px;
+}
+
+.input-wrapper .input-text{
+	border-radius: 10px !important;
+}
+
+.ur-label{
+	font-weight: normal !important;
+}
+
+.ur-label abbr{
+	color: var(--primary-color) !important;
+}
+
+.create-account-title{
+	text-align: center;
+	margin-top: 1em;
+}
+
+/****************
+**** COMMUNITY*****
+*******************/
+.community{
+	margin: auto;
+}
+
+.member-list{
+	list-style: none;
+	display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+    grid-auto-flow: dense;
+	padding: 0;
+	margin: auto;
+}
+
+.member-list-item{
+	background: linear-gradient(120deg, rgba(249, 213, 182, 0.83) 0%, rgba(244, 164, 229, 0.478) 56%, rgba(213, 171, 249, 0.552) 96%);
+	margin-bottom: 4rem;
+	border-radius: 20px;
+	/* max-width: 20rem; */
+	box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+	transition: ease-in-out 0.3s;
+}
+
+.member-list-item:hover{
+	background: linear-gradient(210deg, rgba(249, 213, 182, 0.83) 0%, rgba(244, 164, 229, 0.478) 56%, rgba(213, 171, 249, 0.552) 96%);
+	box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px !important;
+	transition: 0.3s ease-in-out;
+}
+
+.member-container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 1rem 2rem 1rem 2rem;
+}
+
+.member-container .user-name{
+	font-size: 12px;
+}
+
+.member-img img{
+	max-width: 5rem;
+	box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px !important;
+}
+
+.member-link,
+.member-link:visited {
+	color: var(--primary-color);
+}
+
+
+
+
+/* media saker större skärm än mobil, samma mått som wp använder*/
+@media screen and (min-width: 37.5em) {
+	/*ALLMÄNT*/
+	/*marign för hela sidan*/
+	.site-main {
+		margin: 70px 3em 0 3em;
+		margin: 0 3em 0 3em;
+	}
+	
+	.site-header{
+		position: fixed;
+		top: 30px;
+		top: 0;
+	}
+
+	/*sidan efter man har sökt*/
+	.site-search {
+		padding: 0 3em !important;
+	}
+
+	/*margin mellan pil och nav*/
+	.project-content{
+		margin-top: 2em;
+	}
+
+	/*tilbaka knapp*/
+	.back-button {
+		margin-top: 70px;
+	}
+
+	/*margin ovanför tillbakapil*/
+	.project-content,
+	.course-info {
+		margin-top: 100px;
+	}
+	
+	.wp-block-cover {
+		margin-top: 0;
+	}
+	
+	.entry-title{
+		margin-top: 80px;
+	}
+
+	/*logo storlek*/
+	.custom-logo{
+		max-width: 100%;
+	}
+
+	/*pil i header-bild på startsida*/
+	.arrow-down img {
+		display: none;
+	}
+	
+	
+	/*PROFIL*/
+	/*margin top för profil*/
+	.user-bg {
+		margin-top: 80px;
+	}
+	
+	/*datum när man blev medlem satt till höger*/
+	.member-date{
+		justify-content: right;
+		font-size: small;
+	}
+	
+	/*SINGLE PROJEKT*/
+	/*datum då projekt postades satt till höger*/
+	.post-date {
+		text-align: end;
+	}
+	
+	/*STARTSIDA*/
+	.hero-tagline {
+		margin: 0 2em;
+		margin-bottom: 0;
+	}
+
+	.hide-on-computer {
+		display: none !important;
+	}
+
+	/*projekt i hero*/
+	.hero-projects .project-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		/* max-width: 700px; */
+		margin: auto;
+		transform: scale(0.7);
+	}
+	
+	.hero-projects .project-list a {
+		background-color: white;
+		border-radius: 5px;
+	}
+	
+	.hero-projects .project-list .project-list-item {
+		opacity: 0;
+		/* transition: transform .5s ease; */
+	}
+	
+	/*animation for projekt i hero*/
+	.activated .project-list .project-list-item:nth-child(1) {
+		transition: opacity 1000ms ease-in-out;
+		transition-delay: 0.5s;
+		opacity: 1;
+	}
+
+	.activated .project-list .project-list-item:nth-child(2) {
+		transition: opacity 1000ms ease-in-out;
+		transition-delay: 1s;
+		opacity: 1;
+	}
+
+	/*hide three projects in hero*/
+	.activated .project-list .project-list-item:nth-child(3),
+	.activated .project-list .project-list-item:nth-child(4),
+	.activated .project-list .project-list-item:nth-child(5) {
+		display: none;
+	}
+
+	.create-account-title{
+		margin-top: 100px;
+	}
+}
+
+/*the projects in hero depending on screen width*/
+@media screen and (min-width: 670px) {
+	.activated .project-list .project-list-item:nth-child(3)  {
+		display: block;
+		transition: opacity 1000ms ease-in-out;
+		transition-delay: 1.5s;
+		opacity: 1;
+	}
+}
+
+@media screen and (min-width: 880px) {
+	.activated .project-list .project-list-item:nth-child(4)  {
+		display: block;
+		transition: opacity 1000ms ease-in-out;
+		transition-delay: 2s;
+		opacity: 1;
+	}
+}
+
+@media screen and (min-width: 1100px) {
+	.activated .project-list .project-list-item:nth-child(5)  {
+		display: block;
+		transition: opacity 1000ms ease-in-out;
+		transition-delay: 2.5s;
+		opacity: 1;
+	}
+}
